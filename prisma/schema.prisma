@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  role      String   @default("USER") // 'USER' or 'ADMIN'
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model MenuItem {
+  id          String   @id @default(cuid())
+  name        String
+  description String
+  price       Float
+  dayOfWeek   String   // 'Monday', 'Tuesday', ..., 'Sunday'
+  imageUrl    String?
+  orderItems  OrderItem[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Order {
+  id          String      @id @default(cuid())
+  userId      String
+  user        User        @relation(fields: [userId], references: [id])
+  items       OrderItem[]
+  totalAmount Float
+  status      String      @default("PENDING") // 'PENDING', 'COMPLETED', 'CANCELLED'
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        String   @id @default(cuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id])
+  menuItemId String
+  menuItem   MenuItem @relation(fields: [menuItemId], references: [id])
+  quantity  Int
+  priceAtTimeOfOrder Float
+}

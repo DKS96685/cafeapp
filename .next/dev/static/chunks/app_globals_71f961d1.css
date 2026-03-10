@@ -1,0 +1,269 @@
+/* [project]/app/globals.css [app-client] (css) */
+:root {
+  --primary: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --secondary: #10b981;
+  --dark-bg: #0f172a;
+  --darker-bg: #020617;
+  --card-bg: #1e293bb3;
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+  --glass-border: #ffffff1a;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+.app-background {
+  z-index: -1;
+  background: radial-gradient(circle at 15%, #8b5cf626, #0000 25%), radial-gradient(circle at 85% 30%, #10b98126, #0000 25%);
+  width: 100vw;
+  height: 100vh;
+  animation: 20s ease-in-out infinite alternate bgShift;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@keyframes bgShift {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.navbar {
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+  z-index: 100;
+  background: #0f172acc;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.nav-brand {
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  margin-left: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.login-btn {
+  border: 1px solid var(--primary);
+  background: none;
+  border-radius: 999px;
+  padding: .5rem 1.25rem;
+  transition: all .3s;
+}
+
+.nav-links a.login-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 0 15px #8b5cf666;
+}
+
+.hero {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 0 1rem;
+  display: flex;
+  position: relative;
+}
+
+.hero h1 {
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  font-weight: 800;
+  animation: .8s ease-out appearUp;
+}
+
+.hero p {
+  color: var(--text-muted);
+  max-width: 600px;
+  font-size: 1.25rem;
+  animation: 1s ease-out appearUp;
+}
+
+.menu-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 5%;
+}
+
+.section-title {
+  text-align: center;
+  background: linear-gradient(to right, #f8fafc, #94a3b8);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.menu-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  display: grid;
+}
+
+.menu-card {
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275), box-shadow .3s;
+}
+
+.menu-card:hover {
+  border-color: #8b5cf64d;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px -10px #8b5cf633;
+}
+
+.menu-card h3 {
+  color: var(--text-light);
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.menu-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.price {
+  color: var(--secondary);
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.canvas-container {
+  border: 1px solid var(--glass-border);
+  background: #02061780;
+  border-radius: 24px;
+  width: 100%;
+  height: 400px;
+  margin: 4rem auto;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes appearUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-layout {
+  background-color: #0f172a;
+  min-height: 100vh;
+}
+
+.admin-nav {
+  background: #1e293b;
+  border-bottom: 1px solid #ffffff1a;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  display: flex;
+}
+
+.admin-brand {
+  color: #f8fafc;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.admin-links {
+  align-items: center;
+  gap: 1.5rem;
+  display: flex;
+}
+
+.admin-links a {
+  color: #cbd5e1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.admin-links a:hover {
+  color: #8b5cf6;
+}
+
+.logout-btn {
+  color: #ef4444 !important;
+}
+
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.admin-dashboard {
+  color: #f8fafc;
+}
+
+.dashboard-header {
+  border-bottom: 1px solid #ffffff1a;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+}
+
+.dashboard-header h1 {
+  background: linear-gradient(to right, #8b5cf6, #3b82f6);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-bottom: .5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.dashboard-header p {
+  color: #94a3b8;
+}
+
+/*# sourceMappingURL=app_globals_71f961d1.css.map*/

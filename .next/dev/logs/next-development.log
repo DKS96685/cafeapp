@@ -1,0 +1,9 @@
+[00:00:01.331] Server  LOG     ✓ Ready in 912ms
+[00:00:10.514] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:10.851] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:00:30.713] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:00:35.234] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:01:00.962] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:01:11.297] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:01:18.878] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:01:24.556] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
