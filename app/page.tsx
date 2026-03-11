@@ -1,3 +1,5 @@
+import { getServerSession } from 'next-auth';
+import { authOptions } from '../lib/auth';
 import { prisma } from '../lib/prisma';
 import CanvasPlaceholder from '../components/CanvasPlaceholder';
 import Link from 'next/link';
@@ -20,17 +22,28 @@ async function getDailyMenu() {
 
 export default async function Home() {
     const { todayItems, currentDayName } = await getDailyMenu();
+    const session = await getServerSession(authOptions);
 
     return (
         <>
             <div className="app-background"></div>
 
             <nav className="navbar">
-                <Link href="/" className="nav-brand">Cafe Luma</Link>
+                <Link href="/" className="nav-brand">Cafe DK</Link>
                 <div className="nav-links">
                     <Link href="/menu">Menu</Link>
                     <Link href="/about">About</Link>
-                    <Link href="/login" className="login-btn">Admin/Login</Link>
+                    {session ? (
+                        <>
+                            {session.user.role === 'ADMIN' && (
+                                <Link href="/admin" className="admin-link">Admin Dashboard</Link>
+                            )}
+                            <Link href="/orders" className="orders-link">Orders</Link>
+                            <Link href="/api/auth/signout" className="login-btn">Logout</Link>
+                        </>
+                    ) : (
+                        <Link href="/login" className="login-btn">Admin/Login</Link>
+                    )}
                 </div>
             </nav>
 
@@ -38,7 +51,7 @@ export default async function Home() {
                 <section className="hero">
                     <h1>Experience The Taste</h1>
                     <p>
-                        Welcome to Cafe Dk, where every day brings a new flavor. Discover our aesthetically crafted
+                        Welcome to Cafe DK, where every day brings a new flavor. Discover our aesthetically crafted
                         daily menus designed to delight your senses.
                     </p>
                     <CanvasPlaceholder />

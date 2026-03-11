@@ -4,6 +4,7 @@ import { prisma } from '../../lib/prisma';
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import '../../app/globals.css';
+import './orders.css';
 
 export const revalidate = 0;
 
@@ -32,6 +33,10 @@ export default async function OrdersPage() {
                 <Link href="/" className="nav-brand">Cafe Luma</Link>
                 <div className="nav-links">
                     <Link href="/">Back to Menu</Link>
+                    {session.user.role === 'ADMIN' && (
+                        <Link href="/admin" className="admin-link">Admin Dashboard</Link>
+                    )}
+                    <Link href="/api/auth/signout" className="logout-btn">Logout</Link>
                 </div>
             </nav>
 
@@ -78,119 +83,6 @@ export default async function OrdersPage() {
                 )}
             </main>
 
-            <style /* eslint-disable-next-line react/no-unknown-property */ jsx>{`
-        .orders-container {
-          max-width: 800px;
-          margin: 0 auto;
-          padding: 6rem 2rem 2rem;
-          color: #f8fafc;
-        }
-        .page-title {
-          font-size: 2.5rem;
-          font-weight: 800;
-          margin-bottom: 2rem;
-          background: linear-gradient(to right, #60a5fa, #c084fc);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-        .empty-state {
-          text-align: center;
-          padding: 4rem 2rem;
-          background: rgba(30, 41, 59, 0.5);
-          border-radius: 20px;
-          border: 1px dashed rgba(255, 255, 255, 0.1);
-        }
-        .empty-state p {
-          color: #94a3b8;
-          font-size: 1.1rem;
-          margin-bottom: 2rem;
-        }
-        .primary-btn {
-          display: inline-block;
-          background: #8b5cf6;
-          color: white;
-          padding: 0.75rem 2rem;
-          text-decoration: none;
-          border-radius: 8px;
-          font-weight: 600;
-          transition: background 0.2s;
-        }
-        .primary-btn:hover {
-          background: #7c3aed;
-        }
-        .orders-list {
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
-        }
-        .order-card {
-          background: rgba(30, 41, 59, 0.8);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 16px;
-          padding: 1.5rem;
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-        }
-        .order-header {
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          margin-bottom: 1.5rem;
-          padding-bottom: 1rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        .order-id {
-          display: block;
-          font-weight: 700;
-          font-size: 1.2rem;
-          margin-bottom: 0.25rem;
-        }
-        .order-date {
-          display: block;
-          color: #94a3b8;
-          font-size: 0.875rem;
-        }
-        .status-badge {
-          padding: 0.25rem 0.75rem;
-          border-radius: 999px;
-          font-size: 0.75rem;
-          font-weight: 700;
-          letter-spacing: 0.05em;
-        }
-        .status-badge.pending {
-          background: rgba(245, 158, 11, 0.2);
-          color: #fbbf24;
-          border: 1px solid rgba(245, 158, 11, 0.5);
-        }
-        .status-badge.completed {
-          background: rgba(16, 185, 129, 0.2);
-          color: #34d399;
-          border: 1px solid rgba(16, 185, 129, 0.5);
-        }
-        .status-badge.cancelled {
-          background: rgba(239, 68, 68, 0.2);
-          color: #f87171;
-          border: 1px solid rgba(239, 68, 68, 0.5);
-        }
-        .order-items {
-          display: flex;
-          flex-direction: column;
-          gap: 0.75rem;
-          margin-bottom: 1.5rem;
-        }
-        .order-item-row {
-          display: flex;
-          justify-content: space-between;
-          color: #cbd5e1;
-        }
-        .order-footer {
-          display: flex;
-          justify-content: space-between;
-          padding-top: 1rem;
-          border-top: 1px dashed rgba(255, 255, 255, 0.1);
-          font-size: 1.25rem;
-          color: #10b981;
-        }
-      `}</style>
         </>
     );
 }

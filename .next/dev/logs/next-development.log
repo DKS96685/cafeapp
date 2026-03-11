@@ -1,9 +1,209 @@
-[00:00:01.331] Server  LOG     ✓ Ready in 912ms
-[00:00:10.514] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:10.851] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
-[00:00:30.713] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[00:00:35.234] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
-[00:01:00.962] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[00:01:11.297] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
-[00:01:18.878] Browser LOG     THREE.WebGLRenderer: Context Lost.
-[00:01:24.556] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:00:02.017] Server  LOG     ✓ Ready in 1461ms
+[00:00:11.757] Server  WARN    ⚠ Cross origin request detected from 192.168.33.90 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:11.802] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:12.088] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:00:14.172] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:00:22.278] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:00:34.334] Server  ERROR   ⨯ ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:00:34.466] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:35.373] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:35.482] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:36.216] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:36.268] Server  ERROR   ⨯ ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:00:41.443] Browser ERROR   uncaughtError: Error: ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:00:41.644] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:41.644] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:43.716] Browser ERROR   uncaughtError: Error: ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:00:43.883] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:00:43.883] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:01:36.598] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:01:39.299] Server  ERROR   ⨯ ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:01:39.330] Server  ERROR   ⨯ ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:01:39.607] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:04:09.608] Server  ERROR   ⨯ ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:04:10.601] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:04:38.386] Server  ERROR   ⨯ ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:04:38.598] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:04:38.598] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:10.234] Server  ERROR   ⨯ ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+
+
+
+[00:05:10.603] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:35.600] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:35.601] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:35.601] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:35.601] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:38.600] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:39.598] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:05:39.598] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:06:09.601] Browser ERROR   ./app/orders
+Invalid import
+'client-only' cannot be imported from a Server Component module. It should only be used from a Client Component.
+The error was caused by using 'styled-jsx'. It only works in a Client Component but none of its parents are marked with "use client", so they're Server Components by default.
+[00:06:40.932] Server  LOG     ✓ Compiled in 32ms
+[00:06:41.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:56.159] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:07:20.495] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:07:22.527] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:07:25.568] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:07:27.905] Browser WARN    THREE.THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.
+[00:08:11.595] Browser WARN    WARNING: Multiple instances of Three.js being imported.
+[00:08:13.608] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:08:13.608] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:08:32.596] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:33.748] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:09:19.743] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:19.743] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:09:20.111] Server  LOG     ✓ Compiled in 7ms
+[00:09:20.701] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:20.800] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:21.688] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:09:22.596] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:09:44.423] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:46.121] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:10:19.419] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:20.869] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:17:51.679] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:17:53.472] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:18:22.848] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:24.302] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:24:15.172] Server  LOG     ✓ Compiled in 37ms
+[00:24:18.808] Server  LOG     ✓ Compiled in 25ms
+[00:24:18.811] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:19.261] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:19.683] Browser ERROR   uncaughtError: Error: Internal Next.js error: Router action dispatched before initialization.
+[00:24:21.511] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:24:21.600] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:24:34.606] Server  LOG     ✓ Compiled in 36ms
+[00:24:36.602] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:36.621] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:37.911] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:24:38.606] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:24:39.258] Server  LOG     ✓ Compiled in 36ms
+[00:24:41.771] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:41.887] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:43.258] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:24:43.609] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:25:17.867] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:19.408] Browser ERROR   uncaughtError: Error: Data read, but end of buffer not reached
+[00:34:10.092] Server  LOG     ✓ Compiled in 327ms
+[00:34:10.098] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:34:12.191] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:13.146] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:41.329] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

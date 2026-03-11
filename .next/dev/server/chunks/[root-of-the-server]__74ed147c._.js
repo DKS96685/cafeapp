@@ -175,6 +175,7 @@ const authOptions = {
             if (user) {
                 // @ts-ignore
                 token.role = user.role;
+                token.id = user.id;
             }
             return token;
         },
@@ -182,6 +183,7 @@ const authOptions = {
             if (session?.user) {
                 // @ts-ignore
                 session.user.role = token.role;
+                session.user.id = token.id || token.sub;
             }
             return session;
         }

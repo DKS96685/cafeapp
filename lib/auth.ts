@@ -59,6 +59,7 @@ export const authOptions: NextAuthOptions = {
             if (user) {
                 // @ts-ignore
                 token.role = user.role;
+                token.id = user.id;
             }
             return token;
         },
@@ -66,6 +67,7 @@ export const authOptions: NextAuthOptions = {
             if (session?.user) {
                 // @ts-ignore
                 session.user.role = token.role;
+                session.user.id = (token.id as string) || (token.sub as string);
             }
             return session;
         },

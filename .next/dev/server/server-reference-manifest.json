@@ -1,19 +1,49 @@
 {
   "node": {
-    "60032c75052ee99d2f17ff56c4111d4db460534db0": {
+    "40d099fa88967af36fdee22920780382dbc0305f5c": {
       "workers": {
-        "app/checkout/page": {
-          "moduleId": "[project]/.next-internal/server/app/checkout/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/checkout/actions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/orderActions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
-          "exportedName": "submitOrder",
-          "filename": "app/checkout/actions.ts"
+          "exportedName": "addMenuItem",
+          "filename": "app/admin/actions.ts"
         }
       },
       "layer": {
-        "app/checkout/page": "action-browser"
+        "app/admin/page": "action-browser"
       },
-      "filename": "app/checkout/actions.ts",
-      "exportedName": "submitOrder"
+      "filename": "app/admin/actions.ts",
+      "exportedName": "addMenuItem"
+    },
+    "403dcea55432d10a9fbb2d5cbe6243bcd7c360d73e": {
+      "workers": {
+        "app/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/orderActions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteMenuItem",
+          "filename": "app/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/page": "action-browser"
+      },
+      "filename": "app/admin/actions.ts",
+      "exportedName": "deleteMenuItem"
+    },
+    "600d4f18ed51f66890c90002e5f57036d27b0eddd9": {
+      "workers": {
+        "app/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/orderActions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateOrderStatus",
+          "filename": "app/admin/orderActions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/page": "action-browser"
+      },
+      "filename": "app/admin/orderActions.ts",
+      "exportedName": "updateOrderStatus"
     }
   },
   "edge": {},
