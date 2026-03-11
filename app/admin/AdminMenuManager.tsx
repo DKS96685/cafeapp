@@ -1,7 +1,7 @@
 'use client';
 
-import { addMenuItem, deleteMenuItem } from './actions';
-import { useRef } from 'react';
+import { addMenuItem, deleteMenuItem, updateMenuItemPrice } from './actions';
+import { useRef, useState } from 'react';
 
 type MenuItem = {
   id: string;
@@ -13,6 +13,16 @@ type MenuItem = {
 
 export default function AdminMenuManager({ initialItems }: { initialItems: MenuItem[] }) {
   const formRef = useRef<HTMLFormElement>(null);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editPrice, setEditPrice] = useState<string>('');
+
+  const handleSavePrice = async (id: string) => {
+    const parsedPrice = parseFloat(editPrice);
+    if (!isNaN(parsedPrice)) {
+      await updateMenuItemPrice(id, parsedPrice);
+    }
+    setEditingId(null);
+  };
 
   return (
     <div className="manager-container">
@@ -42,7 +52,7 @@ export default function AdminMenuManager({ initialItems }: { initialItems: MenuI
             <div className="form-group">
               <label>Day of Week</label>
               <select name="dayOfWeek" required>
-                {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map(day => (
+                {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Everyday'].map(day => (
                   <option key={day} value={day}>{day}</option>
                 ))}
               </select>
@@ -63,7 +73,26 @@ export default function AdminMenuManager({ initialItems }: { initialItems: MenuI
               </div>
               <p className="item-desc">{item.description}</p>
               <div className="item-footer">
-                <span className="item-price">₹{item.price.toFixed(2)}</span>
+                {editingId === item.id ? (
+                  <div className="edit-price-form">
+                    <span className="currency-symbol">₹</span>
+                    <input 
+                      type="number" 
+                      step="0.01" 
+                      value={editPrice} 
+                      onChange={(e) => setEditPrice(e.target.value)} 
+                      className="edit-price-input" 
+                      autoFocus
+                    />
+                    <button onClick={() => handleSavePrice(item.id)} className="save-btn">Save</button>
+                    <button onClick={() => setEditingId(null)} className="cancel-btn">Cancel</button>
+                  </div>
+                ) : (
+                  <div className="price-container">
+                    <span className="item-price">₹{item.price.toFixed(2)}</span>
+                    <button onClick={() => { setEditingId(item.id); setEditPrice(item.price.toString()); }} className="edit-btn">Edit Price</button>
+                  </div>
+                )}
                 <button onClick={() => deleteMenuItem(item.id)} className="delete-btn">Delete</button>
               </div>
             </div>
@@ -205,6 +234,61 @@ export default function AdminMenuManager({ initialItems }: { initialItems: MenuI
         }
         .delete-btn:hover {
           background: rgba(239, 68, 68, 0.2);
+        }
+        .price-container {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .edit-btn {
+          background: rgba(139, 92, 246, 0.1);
+          color: #a78bfa;
+          border: 1px solid rgba(139, 92, 246, 0.2);
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.7rem;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .edit-btn:hover {
+          background: rgba(139, 92, 246, 0.2);
+        }
+        .edit-price-form {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+        }
+        .currency-symbol {
+          color: #10b981;
+          font-weight: 700;
+        }
+        .edit-price-input {
+          width: 70px;
+          background: rgba(15, 23, 42, 0.5);
+          border: 1px solid #8b5cf6;
+          border-radius: 4px;
+          padding: 0.25rem;
+          color: white;
+          font-family: inherit;
+          font-size: 0.875rem;
+        }
+        .save-btn {
+          background: #10b981;
+          color: white;
+          border: none;
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.7rem;
+          cursor: pointer;
+        }
+        .cancel-btn {
+          background: rgba(148, 163, 184, 0.2);
+          color: #cbd5e1;
+          border: none;
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.7rem;
+          cursor: pointer;
         }
       `}</style>
     </div>

@@ -25,3 +25,13 @@ export async function deleteMenuItem(id: string) {
     revalidatePath('/admin');
     revalidatePath('/');
 }
+
+export async function updateMenuItemPrice(id: string, price: number) {
+    await prisma.menuItem.update({
+        where: { id },
+        data: { price },
+    });
+
+    revalidatePath('/admin');
+    revalidatePath('/');
+}

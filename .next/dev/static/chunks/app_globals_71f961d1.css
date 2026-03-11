@@ -62,6 +62,7 @@ body {
   background: linear-gradient(to right, #8b5cf6, #ec4899);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   font-size: 1.5rem;
   font-weight: 800;
   text-decoration: none;
@@ -129,6 +130,7 @@ body {
   background: linear-gradient(to right, #f8fafc, #94a3b8);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   margin-bottom: 3rem;
   font-size: 2.5rem;
 }
@@ -172,6 +174,26 @@ body {
   font-size: 1.25rem;
   font-weight: 700;
   display: inline-block;
+}
+
+.menu-image-container {
+  background: #0003;
+  border-radius: 12px;
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.menu-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform .3s;
+}
+
+.menu-card:hover .menu-image {
+  transform: scale(1.05);
 }
 
 .canvas-container {
@@ -257,6 +279,7 @@ body {
   background: linear-gradient(to right, #8b5cf6, #3b82f6);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
   margin-bottom: .5rem;
   font-size: 2rem;
   font-weight: 700;

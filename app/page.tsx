@@ -15,7 +15,7 @@ async function getDailyMenu() {
     const allItems = await prisma.menuItem.findMany();
 
     return {
-        todayItems: allItems.filter((item: { id: string; name: string; description: string; price: number; dayOfWeek: string; imageUrl: string | null; createdAt: Date; updatedAt: Date }) => item.dayOfWeek === currentDayName),
+        todayItems: allItems.filter((item: { id: string; name: string; description: string; price: number; dayOfWeek: string; imageUrl: string | null; createdAt: Date; updatedAt: Date }) => item.dayOfWeek === currentDayName || item.dayOfWeek === 'Everyday'),
         currentDayName,
     };
 }
@@ -61,12 +61,19 @@ export default async function Home() {
                     <h2 className="section-title">Today is {currentDayName}</h2>
                     <div className="menu-grid">
                         {todayItems.length > 0 ? (
-                            todayItems.map((item: { id: string; name: string; description: string; price: number }) => (
+                            todayItems.map((item: { id: string; name: string; description: string; price: number; imageUrl: string | null }) => (
                                 <div key={item.id} className="menu-card">
-                                    <h3>{item.name}</h3>
-                                    <p>{item.description}</p>
-                                    <span className="price">₹{item.price.toFixed(2)}</span>
-                                    <AddToCartButton item={item} />
+                                    {item.imageUrl && (
+                                        <div className="menu-image-container">
+                                            <img src={item.imageUrl} alt={item.name} className="menu-image" />
+                                        </div>
+                                    )}
+                                    <div className="menu-content">
+                                        <h3>{item.name}</h3>
+                                        <p>{item.description}</p>
+                                        <span className="price">₹{item.price.toFixed(2)}</span>
+                                        <AddToCartButton item={item} />
+                                    </div>
                                 </div>
                             ))
                         ) : (

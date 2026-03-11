@@ -30,6 +30,21 @@
       "filename": "app/admin/actions.ts",
       "exportedName": "deleteMenuItem"
     },
+    "60d14e04805bec66ad5366f4bd2afa9b9cae1699f0": {
+      "workers": {
+        "app/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/orderActions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateMenuItemPrice",
+          "filename": "app/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/page": "action-browser"
+      },
+      "filename": "app/admin/actions.ts",
+      "exportedName": "updateMenuItemPrice"
+    },
     "600d4f18ed51f66890c90002e5f57036d27b0eddd9": {
       "workers": {
         "app/admin/page": {
