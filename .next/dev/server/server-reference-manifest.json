@@ -59,6 +59,21 @@
       },
       "filename": "app/admin/orderActions.ts",
       "exportedName": "updateOrderStatus"
+    },
+    "6008554f7809ab99d87f50da5ad8634e522a417dbb": {
+      "workers": {
+        "app/admin/page": {
+          "moduleId": "[project]/.next-internal/server/app/admin/page/actions.js { ACTIONS_MODULE0 => \"[project]/app/admin/actions.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/app/admin/orderActions.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "updateUserRole",
+          "filename": "app/admin/actions.ts"
+        }
+      },
+      "layer": {
+        "app/admin/page": "action-browser"
+      },
+      "filename": "app/admin/actions.ts",
+      "exportedName": "updateUserRole"
     }
   },
   "edge": {},

@@ -1,14 +1,30 @@
 'use client';
 
 import { useCart } from '../components/CartProvider';
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 
 export default function AddToCartButton({ item }: { item: { id: string; name: string; price: number } }) {
     const { addToCart } = useCart();
+    const { data: session } = useSession();
+    const router = useRouter();
+
+    const handleAddToCart = () => {
+        if (!session) {
+            router.push('/login');
+            return;
+        }
+        if (session.user.role === 'ADMIN') {
+            alert("Admins cannot place orders. Please use a regular user account to test ordering.");
+            return;
+        }
+        addToCart({ menuItemId: item.id, name: item.name, price: item.price });
+    };
 
     return (
         <button
             className="add-to-cart-btn"
-            onClick={() => addToCart({ menuItemId: item.id, name: item.name, price: item.price })}
+            onClick={handleAddToCart}
         >
             Add to Order
             <style /* eslint-disable-next-line react/no-unknown-property */ jsx>{`

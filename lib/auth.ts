@@ -1,6 +1,8 @@
 import { NextAuthOptions } from 'next-auth';
 import { DefaultSession } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import GoogleProvider from 'next-auth/providers/google';
+import { PrismaAdapter } from '@auth/prisma-adapter';
 import { prisma } from './prisma';
 import bcrypt from 'bcryptjs';
 
@@ -14,7 +16,26 @@ declare module 'next-auth' {
 }
 
 export const authOptions: NextAuthOptions = {
+    // @ts-ignore - Prisma Adapter type mismatch with next-auth v4 is common but works
+    adapter: PrismaAdapter(prisma),
     providers: [
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID || '',
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+            profile(profile) {
+                // Determine role based on email using environment variable or fallback
+                // E.g. ADMIN_EMAIL="your.email@gmail.com"
+                const userRole = profile.email === process.env.ADMIN_EMAIL ? 'ADMIN' : 'USER';
+                
+                return {
+                    id: profile.sub,
+                    name: profile.name,
+                    email: profile.email,
+                    image: profile.picture,
+                    role: userRole,
+                };
+            },
+        }),
         CredentialsProvider({
             name: 'Credentials',
             credentials: {
@@ -32,14 +53,13 @@ export const authOptions: NextAuthOptions = {
                     },
                 });
 
-                if (!user) {
+                if (!user || (!user.password && credentials.password)) {
                     return null;
                 }
 
-                const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
-
-                if (!isPasswordValid) {
-                    return null;
+                if (user.password) {
+                    const isPasswordValid = await bcrypt.compare(credentials.password, user.password);
+                    if (!isPasswordValid) return null;
                 }
 
                 return {
@@ -55,7 +75,8 @@ export const authOptions: NextAuthOptions = {
         strategy: 'jwt',
     },
     callbacks: {
-        async jwt({ token, user }) {
+        async jwt({ token, user, trigger, session }) {
+            // When user first logs in, user object is present
             if (user) {
                 // @ts-ignore
                 token.role = user.role;
@@ -73,6 +94,6 @@ export const authOptions: NextAuthOptions = {
         },
     },
     pages: {
-        signIn: '/login',
+        signIn: '/login', 
     },
 };
